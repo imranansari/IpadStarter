@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JSBridgeWebView.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate,JSBridgeWebViewDelegate> {
+    
+	JSBridgeWebView* webView;
+	
+	}
+
+-(void) loadMaskPage;
+
 
 @property (strong, nonatomic) id detailItem;
 
