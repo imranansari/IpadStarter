@@ -158,11 +158,6 @@
 
 - (void)webView:(UIWebView*) webview didReceiveJSNotificationWithDictionary:(NSString*) jsonString
 {
-    //describeDictionary(dictionary);
-    
-	
-    
-    //NSLog(@"message: %@", "message", [dictionary objectForKey:"message"]);
     
     UIAlertView *alert =  [[UIAlertView alloc] initWithTitle:@"JSON passed from WebView" 
                                                      message: jsonString 
@@ -172,13 +167,7 @@
     
     //[alert show];
     [alert release];
-    
-    
-    //SBJsonParser* jsonParser = [[[SBJsonParser alloc] init] autorelease]; 
-    
-    //NSDictionary* jsonDic = [jsonParser objectWithString:myJsonStr];
-    
-    
+
     
     NSRange openBracket = [jsonString rangeOfString:@"value\":"];
     int loc1 = openBracket.location + 7;
@@ -190,16 +179,7 @@
     SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
     NSDictionary* jsonDic = [jsonParser objectWithString:jsonObj];
     NSLog ( @"firstName = %@", [jsonDic objectForKey: @"firstName"]);
-    
-    
-    //NSError *error = nil;
-    //NSArray *jsonObjects = [jsonParser objectWithString:jsonString error:&error];
-    //[jsonParser release], jsonParser = nil;
-    
-    //NSDictionary* jsonDic = [jsonObj objectWithString:jsonStr];
-    //NSDictionary* dicTranslated = [self translateDictionary:jsonDic];
-    
-    
+
 }
 
 @end
